@@ -15,7 +15,7 @@ jobs:
             cd /app/test            
       - run:
           name: Run Selenium Automated Test Scripts For API Integration Test
-          command: pytest
+          command: cd /app/test && pytest
     
 workflows:  
   build-test-and-deploy:    
