@@ -9,10 +9,6 @@ jobs:
           username: sreedocker123
           password: docker@123
     steps:          
-      
-      - run:
-          name: Check API is Listening
-          command: curl http://localhost:8000/home/
 
       - run:
           name: Run Pytest
