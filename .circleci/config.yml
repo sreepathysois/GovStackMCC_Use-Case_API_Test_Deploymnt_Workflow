@@ -8,11 +8,7 @@ jobs:
         auth:
           username: sreedocker123
           password: docker@123
-    steps:
-      - run:
-          name: Setup MCC API and Prepare for test 
-          command: |            
-            docker run -it -d -p 8000:8000  sreedocker123/govstackmccapitestcircleci:latest        
+    steps:          
       - run:
           name: Run Selenium Automated Test Scripts For API Integration Test
           command: cd /app/test && pytest
