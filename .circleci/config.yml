@@ -12,7 +12,7 @@ jobs:
       
       - run:
           name: Run Echo to test Path
-          command: echo $PWD
+          command: uvicorn main:app --reload  
       - run:
           name: Check API is Listening
           command: curl http://localhost:8000/home/
