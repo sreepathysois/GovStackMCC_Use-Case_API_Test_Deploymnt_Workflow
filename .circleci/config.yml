@@ -1,19 +1,24 @@
 version: 2.1
 
-
+orbs:  
+  python: circleci/python@0.3.2
 jobs:  
   build-and-test:    
-    docker:
-      - image: sreedocker123/govstackmccapitestcircleci:latest
-        auth:
-          username: sreedocker123
-          password: docker@123
-    steps:          
+    executor:
+      name: python/default
+      tag: '3.7'
+    steps:   
+      - checkout       
+      - run:
+          name: Install Dependencies
+          command: pip3 install -r requirnments.txt
+      - run:
+          name: Deploy MCC Api App 
+          command: uvicorn main:app --reload &
 
       - run:
-          name: Run Pytest
-          command: cd /app/test && pytest
-    
+          name: Test API Integration Scripts using Gherkhin and Pytest-BDD
+          command: cd /test && pytest
     
 workflows:  
   build-test-and-deploy:    
