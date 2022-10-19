@@ -1,0 +1,24 @@
+from fastapi import FastAPI, Form 
+
+app = FastAPI()
+
+@app.get("/")
+async def root():
+     return {"message": "Welcome to Registration Building Block for Mother and Child Care Program", "Required_Documents": "National ID UUID Details" ,"Eligibility_Criteria": "Economic_Status Pay_Slip" }
+
+@app.post("/register_user/")
+async def register(MotherName: str = Form(), NID_Mother: int  = Form(), BabyName: str = Form(), NID_Baby: int  = Form(),BirthLocation: str = Form(), BirthPlace: str = Form(), BirthTime: str = Form() ):
+    return {"Registration_Token": 10}
+
+@app.get("/Digital_Registries_BB/{nid_citizen}")
+async def citizen_details(nid_citizen: str):
+    return {"ID": nid_citizen, 
+             "FirstName" : "Smith Carry", 
+             "LastName": " John Helmut", 
+             "BirthCertificateID": "RR-123456789"}
+
+
+@app.post("/RegistrationPayment/")
+ async def payment(Payment_Gateway: str = Form(), CardDetails: int  = Form(), CardHolderName: str = Form(), CVV: int  = Form()):
+    return {"Payment Status": Sucess}
+
