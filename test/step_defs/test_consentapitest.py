@@ -28,7 +28,7 @@ from selenium.webdriver.common.by import By
 # Constants
  
 #API_HOME = 'http://172.16.51.57:8000/GetConsent/'
-API_HOME = 'http://localhost:8000/GetConsent/'
+API_HOME = 'http://52.207.231.57:8000/GetConsent/'
  
 # Scenarios
  
