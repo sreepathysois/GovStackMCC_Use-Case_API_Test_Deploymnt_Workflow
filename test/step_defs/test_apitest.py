@@ -29,7 +29,7 @@ from selenium.webdriver.common.by import By
  
 #API_HOME = 'http://172.16.51.57:8000/home/'
 #API_HOME = 'http://localhost:8000/home/'
-API_HOME = 'http://52.207.231.57:8000/home/'
+API_HOME = 'http://3.91.148.253:8000/home/'
  
 # Scenarios
  
