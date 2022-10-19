@@ -28,7 +28,7 @@ from selenium.webdriver.common.by import By
 # Constants
  
 #API_HOME = 'http://172.16.51.57:8000/register_user/'
-API_HOME = 'http://52.207.231.57:8000/register_user/'
+API_HOME = 'http://3.91.148.253:8000/register_user/'
  
 # Scenarios
  
