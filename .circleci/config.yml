@@ -11,12 +11,7 @@ jobs:
       - run:
           name: Install Dependencies
           command: pip3 install -r requirnments.txt
-      - run:
-          name: "Start Service and Check That it’s Running"
-          command: |
-            docker run -d --name myapi sreedocker123/govstackmccapitestcircleci:second
-            docker exec myapi curl --retry 10 --retry-connrefused http://myapi:8080/home/ 
-
+      
       - run:
           name: Test API Integration Scripts using Gherkhin and Pytest-BDD
           command: cd /test && pytest
