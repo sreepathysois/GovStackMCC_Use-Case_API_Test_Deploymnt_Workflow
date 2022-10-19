@@ -3,16 +3,23 @@ version: 2.1
 
 jobs:  
   build-and-test:    
-    docker:
-      - image: sreedocker123/govstackmccapitestcircleci:second
-        name: myapi
-        auth:
-          username: sreedocker123
-          password: docker@123
-    steps:          
+    build: # name of your job
+    machine: # executor type
+      image: ubuntu-2004:202010-01
+    steps:   
+      - checkout       
       - run:
-          name: Run Selenium Automated Test Scripts For API Integration Test
-          command: cd /app/test && pytest
+          name: Install Dependencies
+          command: pip3 install -r requirnments.txt
+      - run:
+          name: "Start Service and Check That it’s Running"
+          command: |
+            docker run -d --name myapi sreedocker123/govstackmccapitestcircleci:second
+            docker exec myapi curl --retry 10 --retry-connrefused http://localhost:8080/home/ 
+
+      - run:
+          name: Test API Integration Scripts using Gherkhin and Pytest-BDD
+          command: cd /test && pytest
     
 workflows:  
   build-test-and-deploy:    
