@@ -9,9 +9,7 @@ jobs:
           username: sreedocker123
           password: docker@123
     steps:          
-      - run:
-          name: Run Selenium Automated Test Scripts For API Integration Test
-          command: cd /app/test && pytest
+      
       - run:
           name: Run Echo to test Path
           command: echo $PWD
