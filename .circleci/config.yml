@@ -1,0 +1,27 @@
+version: 2.1
+
+
+jobs:  
+  build-and-test:    
+    docker:
+      - image: sreedocker123/govstackmccapitestcircleci:latest
+        auth:
+          username: sreedocker123
+          password: docker@123
+    steps:
+      - run:
+          name: Setup Pytest-BDD 
+          command: |            
+            cd /app/test            
+      - run:
+          name: Run Selenium Automated Test Scripts For API Integration Test
+          command: pytest
+    
+workflows:  
+  build-test-and-deploy:    
+    jobs:      
+      - build-and-test:
+          filters:            
+            branches:
+              only:
+                - cicd-demo-dev
