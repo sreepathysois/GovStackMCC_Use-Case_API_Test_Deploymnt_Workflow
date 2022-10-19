@@ -14,7 +14,10 @@ jobs:
       
       - run:
           name: Test API Integration Scripts using Gherkhin and Pytest-BDD
-          command: pytest
+          command: pytest -v --junitxml="result.xml"
+  
+      - store_test_results:
+          path: results.xml
     
 workflows:  
   build-test-and-deploy:    
