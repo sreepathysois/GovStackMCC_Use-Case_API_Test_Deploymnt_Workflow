@@ -14,7 +14,7 @@ jobs:
           command: pip3 install -r requirnments.txt
       - run:
           name: Deploy MCC Api App 
-          command: uvicorn main:app --reload --daemonbackground:true
+          command: uvicorn main:app --reload 
 
       - run:
           name: Test API Integration Scripts using Gherkhin and Pytest-BDD
