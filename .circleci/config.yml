@@ -17,7 +17,10 @@ jobs:
           command: pytest --junitxml=test/result.xml
       - store_test_results:
            path: test
-      
+      - store_artifacts:
+           path: test/result.xml
+           destination: test
+
     
 workflows:  
   build-test-and-deploy:    
