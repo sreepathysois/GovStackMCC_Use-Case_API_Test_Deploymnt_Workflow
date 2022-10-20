@@ -16,7 +16,7 @@ jobs:
           name: Test API Integration Scripts using Gherkhin and Pytest-BDD
           command: pytest --html="test/result.html"
       - store_test_results:
-           path: test/result.html
+           path: /home/circleci/project/test/
       
     
 workflows:  
