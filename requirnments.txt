@@ -6,3 +6,4 @@ pytest-bdd
 requests
 selenium
 webdriver_manager
+pytest-html
