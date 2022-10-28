@@ -19,7 +19,7 @@ jobs:
           name: Test API Integration Scripts on MyAPI Container From PyTest Container
           command: | 
                 docker exec -it pytest curl http://myapi:8000/home/
-                docker exec -it pytest cd /app/test && pytest
+                docker exec -it pytest cd /app/test & pytest
 
     
 workflows:  
