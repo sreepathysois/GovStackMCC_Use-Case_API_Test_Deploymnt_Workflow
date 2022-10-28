@@ -17,7 +17,7 @@ jobs:
       
       - run:
           name: Test API Integration Scripts on MyAPI Container From PyTest Container
-          command: docker exec -it pytest cd /app/test & ls
+          command: docker exec -it pytest cd /app/test & pytest
       
 
     
