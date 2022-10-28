@@ -10,7 +10,7 @@ jobs:
       - checkout       
       - run:
           name: Deploy MCC API and PyTest Containers
-          command: docker-compose up 
+          command: docker-compose up -d
       - run:
           name: Check Status of Containers
           command: docker ps
