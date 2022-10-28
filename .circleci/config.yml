@@ -9,17 +9,16 @@ jobs:
     steps:   
       - checkout       
       - run:
-          name: Install Dependencies
-          command: pip3 install -r requirnments.txt
+          name: Deploy MCC API and PyTest Containers
+          command: docker-compose up -d 
+      - run:
+          name: Check Status of Containers
+          command: docker ps
       
       - run:
-          name: Test API Integration Scripts using Gherkhin and Pytest-BDD
-          command: pytest --html=test/result.html
-      - store_test_results:
-           path: test
-      - store_artifacts:
-           path: test/result.html
-           destination: test
+          name: Test API Integration Scripts on MyAPI Container From PyTest Container
+          command: docker exec -it pytest cd /app/test & pytest --html=test/result.html
+      
 
     
 workflows:  
